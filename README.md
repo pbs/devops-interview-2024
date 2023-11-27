@@ -1,14 +1,16 @@
-# PBS Standard Repo Template
+# DevOps Interview 2024 Sample code
 
-This template has the following features:
+This repo is intended to be used as a reference for answering interview questions as part of our screening process for our open Sr. DevOps Engineer position. Interested? See https://careers.pbs.org for more info or to apply.
 
-1) Default branch renamed from `master` to `main`
+We're not asking you to run this code or write any new code (although you're certainly welcome to if you feel that will help you prepare), but we'd like to talk through some of what's happening here with you during your interview time with us.
 
-## TODO
+## Scenario
+PBS Food is launching a new, ridiculous, food-based game show centered around guacamole called "Guac Around the Clock". To promote the new show, we need to launch a new standalone wordpress site to share for marketing purposes. The code provided here is a first pass at creating this site, but it has some issues.
 
-Perform the following until we have Terraform configurations capable of activating all these settings for you automatically.
+## Architecture
+The site consists of a wordpress running in docker via AWS ECS. It is using a MySQL database running on AWS RDS. For static assets, we are using our static website module that builds an S3 bucket and a CloudFront distribution, and links the two together. The wp-admin will write uploaded media assets to the s3 bucket (via a wordpress plugin - don't worry too much about _which_ plugin).
 
-1) [Dependabot][dependabot] settings enabled
-2) Automatically delete head branches setting enabled
+## Questions / Problems
 
-[dependabot]: https://dependabot.com/
+1. The ECS container is running fine, but it cannot connect to the MySQL database. What are some of the reasons that may be the case, and how might you solve them?
+2. The ECS container is unable to write assets to the s3 bucket provisioned in the static website module. What are some reasons that may be the case, and how might you solve them?
