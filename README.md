@@ -14,3 +14,4 @@ The site consists of a wordpress running in docker via AWS ECS. It is using a My
 
 1. The ECS container is running fine, but it cannot connect to the MySQL database. What are some of the reasons that may be the case, and how might you solve them?
 2. The ECS container is unable to write assets to the s3 bucket provisioned in the static website module. What are some reasons that may be the case, and how might you solve them?
+3. The WordPress is now running properly and the wp-admin can write static assets to the S3 bucket. However, when you load the homepage of the wordpress, the static assets are not rendered properly on the page. How might you debug this issue?
