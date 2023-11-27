@@ -15,7 +15,7 @@ module "service" {
 
   # Optional
   image_repo = "wordpress"
-  image_tag = "latest"
+  image_tag  = "latest"
 }
 
 # This module creates an RDS database and accompanying resources, like security groups.
