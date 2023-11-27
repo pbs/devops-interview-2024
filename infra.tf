@@ -44,7 +44,7 @@ module "rds" {
 module "static_website" {
   source = "github.com/pbs/terraform-aws-static-website-module?ref=6.0.15"
 
-  primary_hosted_zone = "static."
+  primary_hosted_zone = "static.food.pbs.org"
   default_root_object = "index.html"
 
   # for ease of testing, would be false in production.
